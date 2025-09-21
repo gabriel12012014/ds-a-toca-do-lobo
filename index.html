@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - A Toca do Lobo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="overlay"></div>
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Voltar ao topo">↑</button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <img src="imgs/Logo/versaoPrincipal.png" alt="Logo A Toca do Lobo" class="sidebar-logo">
+        </div>
+        <ul class="nav-list">
+             <li class="nav-item">
+                <a href="#" class="nav-link" data-target="page-tom">Fundamentos</a>
+                <ul class="sub-nav-list"></ul>
+            </li>
+             <li class="nav-item">
+                <a href="#" class="nav-link" data-target="page-logo">Logo e Cores</a>
+                <ul class="sub-nav-list"></ul>
+            </li>
+             <li class="nav-item">
+                <a href="#" class="nav-link" data-target="page-tipografia">Tipografia</a>
+                <ul class="sub-nav-list"></ul>
+            </li>
+             <li class="nav-item">
+                <a href="#" class="nav-link" data-target="page-escrita">Escrita</a>
+                <ul class="sub-nav-list"></ul>
+            </li>
+             <li class="nav-item">
+                <a href="#" class="nav-link" data-target="page-ilustracao">Ilustração</a>
+                <ul class="sub-nav-list"></ul>
+            </li>
+             <li class="nav-item">
+                <a href="#" class="nav-link" data-target="page-componentes">Componentes</a>
+                <ul class="sub-nav-list"></ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="mobile-header">
+            <button id="mobile-menu-btn">☰</button>
+            <h1 style="font-size: 1.5rem; margin: 0;">Menu</h1>
+        </div>
+
+        <div id="page-home" class="page active">
+            <header class="page-header">
+                <h1>Bem-vindo ao Design System</h1>
+                <p class="subtitle">Este é o guia de referência para a criação da identidade visual e da experiência de usuário do jogo "A Toca do Lobo". Use os botões abaixo para navegar pelas seções.</p>
+            </header>
+            <div class="page-content">
+                <div class="home-nav-grid">
+                    <a href="#" class="home-nav-btn" data-target="page-tom"><h3>Fundamentos</h3></a>
+                    <a href="#" class="home-nav-btn" data-target="page-logo"><h3>Logo e Cores</h3></a>
+                    <a href="#" class="home-nav-btn" data-target="page-tipografia"><h3>Tipografia</h3></a>
+                    <a href="#" class="home-nav-btn" data-target="page-componentes"><h3>Componentes</h3></a>
+                    <a href="#" class="home-nav-btn" data-target="page-escrita"><h3>Escrita</h3></a>
+                    <a href="#" class="home-nav-btn" data-target="page-ilustracao"><h3>Ilustração</h3></a>
+                </div>
+            </div>
+        </div>
+        <div id="page-logo" class="page">
+            <header class="page-header">
+                <h1>Logo e Cores</h1>
+                <p class="subtitle">A identidade visual reflete a atmosfera sombria e burocrática do jogo.</p>
+            </header>
+            <div class="page-content">
+                <h2>Paleta Principal</h2>
+                <div class="color-grid">
+                    <div class="color-swatch"><div class="color-preview" style="background-color: var(--cor-principal);"></div><div class="color-info"><strong>Principal</strong><code>#937806</code></div></div>
+                    <div class="color-swatch"><div class="color-preview" style="background-color: var(--cor-secundaria);"></div><div class="color-info"><strong>Secundária</strong><code>#fbde66</code></div></div>
+                </div>
+            </div>
+        </div>
+        <div id="page-componentes" class="page">
+            <header class="page-header">
+                <h1>Componentes</h1>
+                <p class="subtitle">Elementos de UI interativos que formam a base do gameplay.</p>
+            </header>
+            <div class="page-content">
+                <h2>Botões</h2>
+                <div class="example-box">
+                    <button class="btn">Confirmar</button>
+                </div>
+                <h2>Caixa de Diálogos</h2>
+                <div class="example-box">
+                    <div class="dialogo-caixa">
+                        <p class="dialogo-nome">Capivara Contadora:</p>
+                        <p class="dialogo-texto">Chefe, o balanço do mês fechou no vermelho...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-tom" class="page">
+            <header class="page-header">
+                <h1>Nossos Fundamentos</h1>
+                <p class="subtitle">Aqui a gente define as ideias principais do nosso jogo. É um guia rápido pra gente não se perder e garantir que tudo o que a gente criar tenha a mesma vibe.</p>
+            </header>
+            <div class="page-content">
+                <div class="two-column-layout">
+                    <div class="column">
+                        <h2>A Vibe do Jogo</h2>
+                        <p>A nossa parada é misturar duas coisas: representatividade e diversão.</p>
+                        <p>O jogo se passa numa quebrada de uma São Paulo Fictícia chamada São Pônei, então a interface tem que ter essa cara, pra galera se identificar. Ao mesmo tempo, o clima é de divertido, bem colorido e com personagens carismáticos. A interface tem que ser assim também.</p>
+                        <h3>5 palavras que definem o jogo:</h3>
+                        <ul>
+                            <li>Divertido</li>
+                            <li>Colorido</li>
+                            <li>Representatividade</li>
+                            <li>Pixel Art/Retrô</li>
+                            <li>Engraçado</li>
+                        </ul>
+                        <h2>Como a Gente "Fala" com o Jogador</h2>
+                        <p>A mensagem é simples: "Você é o Augustão".</p>
+                        <p>A gente quer que o jogador se sinta dentro do personagem. A câmera do jogo é os olhos dele. Quando abre um menu, na real ele tá pegando o celular. Quando vê o calendário, é o calendário da parede da banca.</p>
+                        <h3>O tom de voz: Gíria de São Paulo.</h3>
+                        <p>O jogo fala como o Augustão falaria. A gente usa gírias e um jeito de falar mais da rua, pra ser engraçado e conectar com o jogador.</p>
+                        <h3>O que a gente faz:</h3>
+                        <p>Usa textos como "Bora Jogar!" ou "Dar um Tempo".</p>
+                        <h3>O que a gente não faz:</h3>
+                        <p>Usar palavras difíceis ou um tom sério demais. Nada de "Iniciar Jogo" ou "Sair".</p>
+                        <p><strong>Ponto importante:</strong> Essa regra vale para a voz principal do jogo. Nos diálogos, os clientes de outros estados (como Minas Gerais e Rio de Janeiro) vão ter suas próprias gírias e sotaques. Isso ajuda a mostrar a diversidade da quebrada.</p>
+                        <h2>Interface que é Gameplay</h2>
+                        <p>A regra principal é: não temos menus normais.</p>
+                        <p>Tudo na nossa interface é interativo e faz parte do jogo. O jogador não vai clicar em botões numa tela, ele vai mexer em objetos do cenário.</p>
+                        <p><strong>Exemplo 1:</strong> O menu inicial é um documento que o jogador precisa carimbar. As opções "começar jogo" ou "continuar" são os lugares onde ele pode bater o carimbo.</p>
+                        <p><strong>Exemplo 2:</strong> Pra mostrar se o jogador ganhou ou perdeu, aparece um jornal na tela com a manchete da notícia.</p>
+                        <p>A ideia é que o jogador nunca sinta que pausou o jogo pra ver um menu. A experiência é uma coisa só, do começo ao fim.</p>
+                    </div>
+                    <div class="column">
+                        <!-- Conteúdo da segunda coluna virá aqui -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-tipografia" class="page">
+            <header class="page-header">
+                <h1>Tipografia</h1>
+                <p class="subtitle">As fontes e regras de texto que dão a personalidade do jogo.</p>
+            </header>
+            <div class="page-content">
+                <!-- O conteúdo futuro desta página virá aqui dentro -->
+            </div>
+        </div>
+        <div id="page-escrita" class="page">
+            <header class="page-header">
+                <h1>Escrita</h1>
+                <p class="subtitle">O tom de voz, as gírias e o estilo de comunicação dos personagens.</p>
+            </header>
+            <div class="page-content">
+                <!-- O conteúdo futuro desta página virá aqui dentro -->
+            </div>
+        </div>
+        <div id="page-ilustracao" class="page">
+            <header class="page-header">
+                <h1>Ilustração</h1>
+                <p class="subtitle">Diretrizes para o estilo de arte, personagens e cenários.</p>
+            </header>
+            <div class="page-content">
+                <!-- O conteúdo futuro desta página virá aqui dentro -->
+            </div>
+        </div>
+        <div id="page-interacoes" class="page">
+            <header class="page-header">
+                <h1>Interações</h1>
+                <p class="subtitle">Padrões de feedback visual e usabilidade para o jogador.</p>
+            </header>
+            <div class="page-content">
+                <!-- O conteúdo futuro desta página virá aqui dentro -->
+            </div>
+        </div>
+        <div id="page-animacao" class="page">
+            <header class="page-header">
+                <h1>Animação</h1>
+                <p class="subtitle">Princípios de movimento para UI, personagens e efeitos.</p>
+            </header>
+            <div class="page-content">
+                <!-- O conteúdo futuro desta página virá aqui dentro -->
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+</html>
