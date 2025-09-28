@@ -40,6 +40,20 @@ body {
     font-size: 18px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+    /* O height: 100vh foi removido para permitir que o conteúdo cresça e o footer fique no final */
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
 /* --- LAYOUT E SIDEBAR (MOBILE FIRST) --- */
 .sidebar {
     width: 250px; /* Largura fixa para mobile */
@@ -59,13 +73,6 @@ body {
 
 .sidebar.is-open {
     transform: translateX(0);
-}
-
-.main-content {
-    width: 100%;
-    box-sizing: border-box;
-    height: 100vh;
-    overflow-y: auto;
 }
 
 /* --- ESTILOS DA BARRA DE ROLAGEM (para navegadores WebKit) --- */
@@ -131,7 +138,6 @@ body {
         flex-shrink: 0;
         background-color: transparent;
         height: auto;
-        max-height: calc(100vh - 40px);
     }
 
     .mobile-header {
@@ -251,7 +257,7 @@ p, li { line-height: 1.6rem; color: var(--ui-text-secondary); font-size: 1rem; }
 
 @media (min-width: 992px) {
     .page-header {
-        padding: 140px 20px 60px;
+        padding: 250px 20px 60px;
     }
 
     .page-body-container {
@@ -266,6 +272,18 @@ p, li { line-height: 1.6rem; color: var(--ui-text-secondary); font-size: 1rem; }
         padding: 0 3%; /* Aplica o padding lateral aqui */
         box-sizing: border-box;
     }
+
+    .home-container {
+        max-width: 1200px;
+        margin: 0 auto; /* Este container agora envolve apenas o grid de botões */
+    }
+}
+
+.home-logo {
+    width: 90%; /* Tamanho para mobile */
+    height: auto;
+    margin-bottom: 20px;
+    max-width: 400px; /* Limite para desktop */
 }
 
 .home-nav-grid {
@@ -278,8 +296,6 @@ p, li { line-height: 1.6rem; color: var(--ui-text-secondary); font-size: 1rem; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--ui-sidebar-bg);
-    border: 1px solid var(--ui-border);
     padding: 40px 20px;
     text-decoration: none;
     text-align: center;
@@ -287,8 +303,7 @@ p, li { line-height: 1.6rem; color: var(--ui-text-secondary); font-size: 1rem; }
 }
 
 .home-nav-btn:hover {
-    background-color: var(--ui-accent-bg);
-    border-color: var(--cor-principal);
+    transform: scale(1.05);
 }
 
 .example-box { background-color: var(--ui-sidebar-bg); padding: 20px; border-radius: 0; margin-top: 20px; border: 1px solid var(--ui-border); }
@@ -359,6 +374,26 @@ p, li { line-height: 1.6rem; color: var(--ui-text-secondary); font-size: 1rem; }
 .pagination-link:hover { background-color: var(--cor-neutra-700); }
 
 /* --- CLASSES DE UTILIDADE DE COR --- */
+.site-footer {
+    padding: 30px 20px 50px;
+    background-color: #4694c3;
+    color: var(--cor-neutra-100);
+    font-size: 1rem;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-footer a {
+    color: var(--cor-neutra-100);
+    text-decoration: none;
+}
+
 .bg-secondary-blue { background-color: #4694c3 !important; }
 .bg-secondary-green { background-color: #a0ce5f !important; }
 .bg-secondary-purple { background-color: #9252a0 !important; }
