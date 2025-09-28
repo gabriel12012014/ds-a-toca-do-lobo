@@ -1,146 +1,225 @@
-// --- CONSTANTES GLOBAIS ---
-const navLinks = document.querySelectorAll('.nav-link');
-const pages = document.querySelectorAll('.page');
-const mainContentEl = document.querySelector('.main-content');
-const homeNavButtons = document.querySelectorAll('.home-nav-btn');
-const sidebar = document.querySelector('.sidebar');
-const overlay = document.getElementById('overlay');
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const scrollTopBtn = document.getElementById("scrollTopBtn");
-const bodyEl = document.body;
-
-// --- NAVEGAÇÃO DE PÁGINAS ---
-function showPage(targetId) {
-    // Desativa a página e o link de navegação antigos
-    pages.forEach(p => p.classList.remove('active'));
-    navLinks.forEach(l => {
-        l.classList.remove('active');
-        const subNav = l.parentElement.querySelector('.sub-nav-list');
-        if (subNav) {
-            subNav.classList.remove('is-visible');
-        }
-    });
-
-    // Ativa a nova página e o link de navegação correspondente
-    const targetPage = document.getElementById(targetId);
-    const correspondingNavLink = document.querySelector(`.nav-link[data-target="${targetId}"]`);
-
-    if (targetPage) {
-        targetPage.classList.add('active');
-    }
-    if (correspondingNavLink) {
-        correspondingNavLink.classList.add('active');
-        const subNav = correspondingNavLink.parentElement.querySelector('.sub-nav-list');
-        if (subNav) {
-            subNav.classList.add('is-visible');
-        }
-    }
-
-    // Esconde a sidebar na página inicial, mostra nas outras
-    if (targetId === 'page-home') {
-        bodyEl.classList.add('home-active');
-    } else {
-        bodyEl.classList.remove('home-active');
-    }
-
-    mainContentEl.scrollTop = 0; // Rola para o topo da nova página
-
-    // Fecha o menu mobile se estiver aberto
-    if (window.innerWidth < 992) {
-        closeMobileMenu();
-    }
-}
-
-function handleNavClick(event) {
-    event.preventDefault();
-    const targetId = event.currentTarget.getAttribute('data-target');
-    showPage(targetId);
-}
-
-// --- SCRIPT PARA O MENU MOBILE ---
-function openMobileMenu() {
-    sidebar.classList.add('is-open');
-    overlay.classList.add('is-visible');
-}
-
-function closeMobileMenu() {
-    sidebar.classList.remove('is-open');
-    overlay.classList.remove('is-visible');
-}
-
-// --- SCRIPT PARA O BOTÃO "VOLTAR AO TOPO" ---
-mainContentEl.onscroll = () => { scrollTopBtn.style.display = mainContentEl.scrollTop > 100 ? "block" : "none"; };
-const scrollToTop = () => { mainContentEl.scrollTo({top: 0, behavior: 'smooth'}); };
-
-// --- GERAÇÃO DINÂMICA DO SUB-MENU ---
-function slugify(text) {
-    return text.toString().toLowerCase()
-        .replace(/\s+/g, '-')           // Substitui espaços por -
-        .replace(/[^\w\-]+/g, '')       // Remove caracteres não-alfanuméricos
-        .replace(/\-\-+/g, '-')         // Substitui múltiplos - por um único -
-        .replace(/^-+/, '')             // Remove hífens do início
-        .replace(/-+$/, '');            // Remove hífens do fim
-}
-
-function populateSubNavs() {
-    navLinks.forEach(navLink => {
-        const targetId = navLink.dataset.target;
-        const page = document.getElementById(targetId);
-        const subNavList = navLink.parentElement.querySelector('.sub-nav-list');
-
-        if (!page || !subNavList) return;
-
-        const headings = page.querySelectorAll('.page-content h2');
-        if (headings.length === 0) return;
-
-        headings.forEach(h2 => {
-            const headingText = h2.textContent;
-            const headingId = slugify(headingText);
-            h2.id = headingId;
-
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = `#${headingId}`;
-            link.textContent = headingText;
-            link.classList.add('sub-nav-link');
-            
-            listItem.appendChild(link);
-            subNavList.appendChild(listItem);
-        });
-    });
-}
-
-// --- INICIALIZAÇÃO E EVENT LISTENERS ---
-navLinks.forEach(link => link.addEventListener('click', handleNavClick));
-homeNavButtons.forEach(button => button.addEventListener('click', handleNavClick));
-mobileMenuBtn.addEventListener('click', openMobileMenu);
-overlay.addEventListener('click', closeMobileMenu);
-
-sidebar.addEventListener('click', (event) => {
-    if (event.target.matches('.sub-nav-link')) {
-        event.preventDefault();
-        const targetId = event.target.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            // Calcula a posição correta do elemento dentro do container de rolagem.
-            // getBoundingClientRect() nos dá a posição relativa à janela de visualização (viewport).
-            const containerRect = mainContentEl.getBoundingClientRect();
-            const elementRect = targetElement.getBoundingClientRect();
-
-            // A posição de rolagem de destino é a posição atual de rolagem
-            // mais a distância do elemento até o topo do container.
-            const offset = elementRect.top - containerRect.top;
-
-            mainContentEl.scrollTo({
-                top: mainContentEl.scrollTop + offset,
-                behavior: 'smooth'
-            });
-        }
-    }
-});
-
-// Define o estado inicial da UI no carregamento da página
 document.addEventListener('DOMContentLoaded', () => {
-    populateSubNavs();
+    // --- CONSTANTES GLOBAIS ---
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page');
+    const mainContentEl = document.querySelector('.main-content');
+    const homeNavButtons = document.querySelectorAll('.home-nav-btn');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('overlay');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    const bodyEl = document.body; 
+
+    // --- NAVEGAÇÃO DE PÁGINAS ---
+    function showPage(pageId, subPageId = null) {
+        // 1. Esconder todas as páginas e desativar todos os links principais
+        pages.forEach(p => p.classList.remove('active'));
+        navLinks.forEach(l => {
+            l.classList.remove('active');
+            const subNav = l.parentElement.querySelector('.sub-nav-list');
+            if (subNav) subNav.classList.remove('is-visible'); 
+        });
+
+        // 2. Ativar a página principal correta
+        const targetPage = document.getElementById(pageId);
+        if (!targetPage) {
+            console.error(`Página com ID "${pageId}" não encontrada.`);
+            return;
+        }
+        targetPage.classList.add('active');
+
+        // 3. Ativar o link principal correspondente na sidebar
+        const activeLink = sidebar.querySelector(`.nav-link[data-target="${pageId}"]`);
+        if (activeLink) {
+            // Remove a classe de cor de todos os links antes de adicionar a nova
+            sidebar.querySelectorAll('.nav-link').forEach(l => l.classList.remove('bg-secondary-blue', 'bg-secondary-green', 'bg-secondary-purple', 'bg-secondary-red'));
+
+            activeLink.classList.add('active');
+            const subNav = activeLink.parentElement.querySelector('.sub-nav-list');
+            if (subNav) subNav.classList.add('is-visible');
+
+            // Adiciona a classe de cor baseada no header da página
+            const header = targetPage.querySelector('.page-header');
+            const colorClass = header ? Array.from(header.classList).find(c => c.startsWith('bg-')) : null;
+            if (colorClass) activeLink.classList.add(colorClass);
+        }
+
+        // 4. Lidar com subpáginas
+        const subPages = targetPage.querySelectorAll('.sub-page');
+        if (subPages.length > 0) {
+            // Esconder todas as subpáginas primeiro
+            subPages.forEach(sp => sp.classList.remove('active'));
+
+            // Determinar qual subpágina mostrar
+            let targetSubPage;
+            if (subPageId) {
+                targetSubPage = targetPage.querySelector(`.sub-page[data-subpage-id="${subPageId}"]`);
+            } else {
+                // Se nenhum ID de subpágina for fornecido, mostra a primeira
+                targetSubPage = subPages[0];
+            }
+
+            if (targetSubPage) {
+                targetSubPage.classList.add('active');
+                // Ativar o link da subpágina na sidebar
+                const subPageLinkId = targetSubPage.dataset.subpageId; 
+                const activeSubLink = document.querySelector(`.sub-nav-link[data-subtarget="${subPageLinkId}"]`);
+                if (activeSubLink) {
+                    const allSubNavLinks = activeSubLink.closest('.sub-nav-list').querySelectorAll('.sub-nav-link');
+                    allSubNavLinks.forEach(sl => {
+                        sl.classList.remove('active', 'bg-secondary-blue', 'bg-secondary-green', 'bg-secondary-purple', 'bg-secondary-red');
+                    });
+                    activeSubLink.classList.add('active');
+                    const header = targetPage.querySelector('.page-header');
+                    const colorClass = header ? Array.from(header.classList).find(c => c.startsWith('bg-')) : null;
+                    if (colorClass) activeSubLink.classList.add(colorClass);
+                }
+            }
+        }
+
+        // 5. Ajustes de UI
+        if (window.innerWidth >= 992) {
+            // Lógica para DESKTOP
+            if (pageId === 'page-home') {
+                sidebar.style.display = 'none';
+            } else {
+                sidebar.style.display = 'block';
+                // Mover a sidebar para dentro do container da página ativa
+                const pageBodyContainer = targetPage.querySelector('.page-body-container');
+                if (pageBodyContainer) {
+                    pageBodyContainer.prepend(sidebar);
+                }
+            }
+        } else {
+            // Lógica para MOBILE
+            sidebar.style.display = 'block'; // Garante que a sidebar seja 'visível' para a animação do menu
+            if (sidebar.parentElement !== bodyEl) {
+                bodyEl.prepend(sidebar);
+            }
+        }
+
+        mainContentEl.scrollTop = 0;
+        if (window.innerWidth < 992) closeMobileMenu();
+    }
+
+    function handleNavClick(event, clickedElement) {
+        event.preventDefault();
+        const pageTarget = clickedElement.getAttribute('data-target');
+        const subPageTarget = clickedElement.getAttribute('data-subtarget');
+        showPage(pageTarget, subPageTarget);
+    }
+
+    // --- MENU MOBILE ---
+    const openMobileMenu = () => {
+        sidebar.classList.add('is-open');
+        overlay.classList.add('is-visible');
+    };
+    const closeMobileMenu = () => {
+        sidebar.classList.remove('is-open');
+        overlay.classList.remove('is-visible');
+    };
+
+    // --- BOTÃO "VOLTAR AO TOPO" ---
+    window.scrollToTop = () => { mainContentEl.scrollTo({ top: 0, behavior: 'smooth' }); };
+
+    // --- LÓGICA DE SCROLL (STICKY SIDEBAR) ---
+    mainContentEl.addEventListener('scroll', () => {
+        // Botão de voltar ao topo
+        scrollTopBtn.style.display = mainContentEl.scrollTop > 100 ? "block" : "none";
+    });
+
+    // --- GERAÇÃO DINÂMICA DE CONTEÚDO ---
+    function slugify(text) {
+        return text.toString().toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^\w\-]+/g, '')
+            .replace(/\-\-+/g, '-')
+            .replace(/^-+/, '')
+            .replace(/-+$/, '');
+    }
+
+    function populateDynamicContent() {
+        const pagesWithSubnav = document.querySelectorAll('.page:not(#page-home)');
+        pagesWithSubnav.forEach(page => {
+            const pageId = page.id;
+            const subPages = Array.from(page.querySelectorAll('.sub-page'));
+            const mainNavLink = document.querySelector(`.sidebar .nav-link[data-target="${pageId}"]`);
+            const subNavList = mainNavLink ? mainNavLink.parentElement.querySelector('.sub-nav-list') : null;
+            
+            if (subNavList) {
+                subNavList.innerHTML = ''; // Limpa sub-menus existentes
+                if (subPages.length > 0) {
+                    subPages.forEach((subPage, index) => {
+                        const h2 = subPage.querySelector('h2');
+                        if (!h2) return;
+
+                        const title = h2.textContent;
+                        const subPageId = subPage.dataset.subpageId || slugify(title);
+                        subPage.dataset.subpageId = subPageId; // Garante que o ID existe
+
+                        // 1. Popular Sub-menu na Sidebar
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.href = '#';
+                        link.textContent = title;
+                        link.classList.add('sub-nav-link');
+                        link.dataset.target = pageId;
+                        link.dataset.subtarget = subPageId;
+                        listItem.appendChild(link);
+                        subNavList.appendChild(listItem);
+
+                        // 2. Criar botões de Paginação
+                        const paginationNav = subPage.querySelector('.pagination-nav');
+                        if (paginationNav) {
+                            paginationNav.innerHTML = ''; // Limpa paginação existente
+
+                            // Botão "Anterior"
+                            if (index > 0) {
+                                const prevSubPage = subPages[index - 1];
+                                const prevTitle = prevSubPage.querySelector('h2').textContent;
+                                const prevId = prevSubPage.dataset.subpageId;
+                                const prevLink = document.createElement('a');
+                                prevLink.href = '#';
+                                prevLink.classList.add('pagination-link', 'prev');
+                                prevLink.dataset.target = pageId;
+                                prevLink.dataset.subtarget = prevId;
+                                prevLink.innerHTML = `&larr; Anterior: ${prevTitle}`;
+                                paginationNav.appendChild(prevLink);
+                            }
+
+                            // Botão "Próximo"
+                            if (index < subPages.length - 1) {
+                                const nextSubPage = subPages[index + 1];
+                                const nextTitle = nextSubPage.querySelector('h2').textContent;
+                                const nextId = nextSubPage.dataset.subpageId;
+                                const nextLink = document.createElement('a');
+                                nextLink.href = '#';
+                                nextLink.classList.add('pagination-link', 'next');
+                                nextLink.dataset.target = pageId;
+                                nextLink.dataset.subtarget = nextId;
+                                nextLink.innerHTML = `Próximo: ${nextTitle} &rarr;`;
+                                paginationNav.appendChild(nextLink);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    // --- INICIALIZAÇÃO E EVENT LISTENERS ---
+    populateDynamicContent();
+
+    document.body.addEventListener('click', (event) => {
+        const target = event.target.closest('a');
+        if (target && (target.matches('.nav-link') || target.matches('.home-nav-btn') || target.matches('.sub-nav-link') || target.matches('.pagination-link'))) {
+            handleNavClick(event, target);
+        }
+    });
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    overlay.addEventListener('click', closeMobileMenu);
+
+    // Define o estado inicial da UI
     showPage('page-home');
 });
