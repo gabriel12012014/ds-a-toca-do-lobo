@@ -48,7 +48,6 @@ body {
 
 .main-content {
     flex-grow: 1;
-    /* O height: 100vh foi removido para permitir que o conteúdo cresça e o footer fique no final */
     width: 100%;
     box-sizing: border-box;
     overflow-y: auto;
@@ -98,15 +97,18 @@ body {
 }
 
 #mobile-menu-btn {
-    background: none;
-    border: 1px solid var(--ui-border);
+    background-color: var(--cor-principal);
+    color: var(--cor-neutra-900);
+    border: 2px solid var(--cor-neutra-800);
     border-radius: 0;
     font-size: 24px;
-    padding: 5px 10px;
+    padding: 6px 12px;
     margin-right: 15px;
     cursor: pointer;
     z-index: 50;
+    box-shadow: 4px 4px 0 var(--cor-neutra-800);
 }
+#mobile-menu-btn:hover { background-color: var(--ui-accent-bg); }
 
 #overlay {
     display: none;
@@ -125,19 +127,25 @@ body {
 
 /* --- ESTILOS DESKTOP (Telas maiores que 992px) --- */
 @media (min-width: 992px) {
+    .main-content {
+        height: 100vh; /* Garante um container de rolagem para sticky funcionar */
+        overflow-y: auto;
+    }
+
     .page-body-container {
         display: flex;
         align-items: flex-start;
     }
 
     .sidebar {
-        position: sticky; /* Fica fixo após rolar */
-        top: 20px; /* Espaçamento do topo quando fixo */
+        position: sticky; /* Fica fixo ao rolar dentro do main */
+        top: 0; /* cola no topo assim que aparecer */
         transform: translateX(0); /* Sempre visível */
         width: 20%;
         flex-shrink: 0;
         background-color: transparent;
-        height: auto;
+        height: 100vh; /* ocupa toda a viewport para ficar sempre visível */
+        overflow-y: auto; /* rolagem interna se o menu for longo */
     }
 
     .mobile-header {
@@ -146,6 +154,16 @@ body {
 
     #overlay {
         display: none !important; /* Garante que o overlay nunca apareça */
+    }
+}
+
+/* --- FIXAR BOTÃO DO MENU NO MOBILE --- */
+@media (max-width: 991.98px) {
+    #mobile-menu-btn {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1101; /* acima do overlay (999) e da sidebar (1000) */
     }
 }
 
@@ -306,7 +324,7 @@ p, li { line-height: 1.6rem; color: var(--ui-text-secondary); font-size: 1rem; }
     transform: scale(1.05);
 }
 
-.example-box { background-color: var(--ui-sidebar-bg); padding: 20px; border-radius: 0; margin-top: 20px; border: 1px solid var(--ui-border); }
+.example-box { background-color: #e3e3e3; padding: 20px; border-radius: 0; margin-top: 20px; border: none; }
 
 /* Variação do example-box sem fundo ou borda, para imagens */
 .example-box-clean { margin-top: 20px; padding: 20px 0; }

@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
             let targetSubPage;
             if (subPageId) {
                 targetSubPage = targetPage.querySelector(`.sub-page[data-subpage-id="${subPageId}"]`);
+                // Fallback robusto: se não encontrar a subpágina solicitada, mostra a primeira
+                if (!targetSubPage) {
+                    targetSubPage = subPages[0];
+                }
             } else {
                 // Se nenhum ID de subpágina for fornecido, mostra a primeira
                 targetSubPage = subPages[0];
@@ -191,12 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             if (index < subPages.length - 1) {
                                 const nextSubPage = subPages[index + 1];
                                 const nextTitle = nextSubPage.querySelector('h2').textContent;
-                                const nextId = nextSubPage.dataset.subpageId;
+                                // Garante que a próxima subpágina tenha um ID definido antes de criar o link
+                                const ensuredNextId = nextSubPage.dataset.subpageId || slugify(nextTitle);
+                                nextSubPage.dataset.subpageId = ensuredNextId;
                                 const nextLink = document.createElement('a');
                                 nextLink.href = '#';
                                 nextLink.classList.add('pagination-link', 'next');
                                 nextLink.dataset.target = pageId;
-                                nextLink.dataset.subtarget = nextId;
+                                nextLink.dataset.subtarget = ensuredNextId;
                                 nextLink.innerHTML = `Próximo: ${nextTitle} &rarr;`;
                                 paginationNav.appendChild(nextLink);
                             }
