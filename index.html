@@ -1,37 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design System - A Toca do Lobo</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div id="overlay"></div>
+    <nav class="top-navbar">
+        <div class="top-navbar-inner">
+            <a href="#" class="top-logo-link" data-target="page-home">
+                <img src="imgs/Logo/versaoIcone.png" alt="Logo A Toca do Lobo" class="top-logo-img">
+            </a>
+        </div>
+    </nav>
     <button onclick="scrollToTop()" id="scrollTopBtn" title="Voltar ao topo">↑</button>
 
     <main class="main-content">
-        <div class="mobile-header"> 
+        <div class="mobile-header">
             <button id="mobile-menu-btn">☰</button>
         </div>
 
         <div id="page-home" class="page active">
-            <header class="page-header">
+            <header class="page-header home-hero">
                 <div class="page-header-inner">
-                    <img src="imgs/Logo/versaoPrincipal.png" alt="Logo A Toca do Lobo" class="home-logo">
-                    <p class="subtitle" style="max-width: 600px;">Este é o guia de referência para a criação da identidade visual e da experiência de usuário do jogo "A Toca do Lobo". Use os botões abaixo para navegar pelas seções.</p>
+                    <img src="imgs/Logo/versaoTexto.png" alt="Logo A Toca do Lobo" class="home-logo">
+                    <p class="subtitle" style="max-width: 600px;">Este é o guia de referência para a criação da
+                        identidade visual e da experiência de usuário do jogo "A Toca do Lobo". Use os botões abaixo
+                        para navegar pelas seções.</p>
                 </div>
             </header>
             <div class="home-container">
                 <div class="page-content">
                     <div class="home-nav-grid">
-                        <a href="#" class="home-nav-btn bg-secondary-blue" data-target="page-fundamentos"><h3 class="text-light">Fundamentos</h3></a>
-                        <a href="#" class="home-nav-btn bg-secondary-green" data-target="page-logo"><h3 class="text-light">Identidade</h3></a>
-                        <a href="#" class="home-nav-btn bg-secondary-purple" data-target="page-ilustracao"><h3 class="text-light">Ilustração</h3></a>
-                        <a href="#" class="home-nav-btn bg-secondary-red" data-target="page-componentes"><h3 class="text-light">Componentes</h3></a>
-                        <a href="#" class="home-nav-btn bg-secondary-blue" data-target="page-interacoes"><h3 class="text-light">Interações</h3></a>
-                        <a href="#" class="home-nav-btn bg-secondary-green" data-target="page-animacao"><h3 class="text-light">Animação</h3></a>
+                        <a href="#" class="home-nav-btn bg-secondary-blue" data-target="page-fundamentos">
+                            <div class="home-nav-text">
+                                <h3 class="text-light">Fundamentos</h3>
+                                <p class="home-nav-desc">Vibe, linguagem e princípios que guiam todo o jogo.</p>
+                                <div class="home-nav-cta"><strong>Saiba mais</strong></div>
+                            </div>
+                        </a>
+                        <a href="#" class="home-nav-btn bg-secondary-green" data-target="page-logo">
+                            <div class="home-nav-text">
+                                <h3 class="text-light">Identidade</h3>
+                                <p class="home-nav-desc">Logo, tipografia e cores para manter a marca coesa.</p>
+                                <div class="home-nav-cta"><strong>Saiba mais</strong></div>
+                            </div>
+                        </a>
+                        <a href="#" class="home-nav-btn bg-secondary-purple" data-target="page-ilustracao">
+                            <div class="home-nav-text">
+                                <h3 class="text-light">Ilustração</h3>
+                                <p class="home-nav-desc">Estilo visual dos personagens, cenas e elementos.</p>
+                                <div class="home-nav-cta"><strong>Saiba mais</strong></div>
+                            </div>
+                        </a>
+                        <a href="#" class="home-nav-btn bg-secondary-red" data-target="page-componentes">
+                            <div class="home-nav-text">
+                                <h3 class="text-light">Componentes</h3>
+                                <p class="home-nav-desc">Botões, documentos e itens interativos do gameplay.</p>
+                                <div class="home-nav-cta"><strong>Saiba mais</strong></div>
+                            </div>
+                        </a>
+                        <a href="#" class="home-nav-btn bg-secondary-blue" data-target="page-interacoes">
+                            <div class="home-nav-text">
+                                <h3 class="text-light">Interações</h3>
+                                <p class="home-nav-desc">Feedbacks, mouse e padrões de entrada do jogador.</p>
+                                <div class="home-nav-cta"><strong>Saiba mais</strong></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -58,438 +98,689 @@
                     <a href="#" class="nav-link" data-target="page-interacoes">Interações</a>
                     <ul class="sub-nav-list"></ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" data-target="page-animacao">Animação</a>
-                    <ul class="sub-nav-list"></ul>
-                </li>
             </ul>
         </nav>
         <div class="content-wrapper">
             <div id="page-logo" class="page">
-                    <header class="page-header bg-secondary-green">
-                        <div class="page-header-inner">
-                            <h1 class="text-light">Identidade</h1>
-                            <p class="subtitle text-light">A identidade visual reflete a atmosfera sombria e burocrática do jogo.</p>
-                        </div>
-                    </header>
-                    <div class="page-content">
-                        <div class="page-body-container">
+                <header class="page-header bg-secondary-green">
+                    <div class="page-header-inner">
+                        <h1 class="text-light">Identidade</h1>
+                        <p class="subtitle text-light">A identidade visual reflete a atmosfera sombria e burocrática do
+                            jogo.</p>
+                    </div>
+                </header>
+                <div class="page-content">
+                    <div class="page-body-container">
                         <div class="sub-page-wrapper">
                             <div class="sub-page" data-subpage-id="logo">
-                        <h2>Logo</h2>
-                        <p>O logo é a principal representação visual da marca. Ele deve ser usado de forma consistente em todas as comunicações.</p>
+                                <h2>Logo</h2>
+                                <p>O logo é a principal representação visual da marca. Ele deve ser usado de forma
+                                    consistente em todas as comunicações.</p>
 
-                        <h3>Versão Principal</h3>
-                        <p>Esta é a versão primária do logo e deve ser usada sempre que possível. Combina o ícone e o nome.</p>
-                        <h4>Versão Colorida (Preferencial)</h4>
-                        <div class="logo-display">
-                            <img src="imgs/Logo/versaoPrincipal.png" alt="Logo Principal - A Toca do Lobo" style="max-width: 100%; height: auto;">
-                        </div>
-                        <h4>Versões Monocromáticas</h4>
-                        <p>Use em fundos onde a versão colorida não tem contraste suficiente.</p>
-                        <div class="example-box" style="background-color: transparent; text-align: center; padding: 20px; margin-bottom: 20px; border: none;"><img src="imgs/Logo/versaoPrincipalPreta.png" alt="Logo Principal em Preto" style="max-width: 80%;"></div>
-                        <div class="example-box" style="background-color: #1a1a1a; text-align: center; padding: 20px; border: none;"><img src="imgs/Logo/versaoPrincipalBranca.png" alt="Logo Principal em Branco" style="max-width: 80%;"></div>
-
-                        <h3>Versão Ícone</h3>
-                        <p>O ícone pode ser usado isoladamente em contextos onde a marca já é bem conhecida, como avatares de redes sociais ou favicons.</p>
-                        <h4>Versão Colorida</h4>
-                        <div class="logo-display">
-                            <img src="imgs/Logo/versaoIcone.png" alt="Ícone do Logo - A Toca do Lobo" style="max-width: 150px; height: auto;">
-                        </div>
-                        <h4>Versões Monocromáticas</h4>
-                        <div class="example-box" style="background-color: transparent; text-align: center; padding: 20px; margin-bottom: 20px; border: none;"><img src="imgs/Logo/versaoIconePreta.png" alt="Ícone em Preto" style="max-width: 100px;"></div>
-                        <div class="example-box" style="background-color: #1a1a1a; text-align: center; padding: 20px; border: none;"><img src="imgs/Logo/versaoIconeBranca.png" alt="Ícone em Branco" style="max-width: 100px;"></div>
-
-                        <h3>Versão Texto</h3>
-                        <p>A versão em texto pode ser usada quando o espaço é limitado ou em contextos onde o ícone não é necessário.</p>
-                        <div class="logo-display"><img src="imgs/Logo/versaoTexto.png" alt="Logo em Texto - A Toca do Lobo" style="max-width: 100%; height: auto;"></div>
-                        <div class="example-box" style="background-color: transparent; text-align: center; padding: 20px; margin-bottom: 20px; border: none;"><img src="imgs/Logo/versaoTextoPreta.png" alt="Logo em Texto Preto" style="max-width: 80%;"></div>
-                        <div class="example-box" style="background-color: #1a1a1a; text-align: center; padding: 20px; border: none;"><img src="imgs/Logo/versaoTextoBranca.png" alt="Logo em Texto Branco" style="max-width: 80%;"></div>
-
-                        <h3>Tamanho Mínimo</h3>
-                        <p>Para garantir a legibilidade e o impacto visual do logo, é crucial respeitar suas dimensões mínimas de uso. Usar o logo em tamanhos menores que os recomendados pode comprometer sua clareza e reconhecimento.</p>
-
-                        <h4>Uso em Impressos</h4>
-                        <p>Em materiais impressos, como cartões de visita ou panfletos, a largura mínima recomendada para a versão principal do logo é de <strong>2cm</strong> de largura.</p>
-                        <div class="example-box" style="text-align: center; background-color: transparent; border: none;">
-                            <img src="imgs/Logo/tamanho-minimo-impresso.png" alt="Tamanho mínimo do logo para impressão" style="max-width: 200px;">
-                        </div>
-
-                        <h4>Uso em Digital</h4>
-                        <p>Para telas e mídias digitais, como websites ou avatares, a largura mínima recomendada é de <strong>50 pixels</strong> da largura.</p>
-                        <div class="example-box" style="text-align: center; background-color: transparent; border: none;">
-                            <img src="imgs/Logo/tamanho-minimo-digital.png" alt="Tamanho mínimo do logo para uso digital" style="max-width: 200px;">
-                        </div>
-
-                        <h3>Rotação da Logo</h3>
-                        <h4>Uso do Ícone</h4>
-                        <p>Em espaços limitados onde a legibilidade do nome da marca é comprometida, deve-se utilizar a versão do logo que contém apenas o ícone. Esta é a principal solução para garantir a presença da marca em áreas restritas.</p>
-
-                        <h4>Rotação Permitida</h4>
-                        <p>Quando o uso do logo completo for a escolha ideal para a situação, ele poderá ser rotacionado nos seguintes ângulos: 0° (padrão), 45° e 90°. Nenhuma outra angulação é permitida, a fim de preservar a consistência e o reconhecimento da marca.</p>
-                        <div class="example-box-clean">
-                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; justify-items: center; gap: 20px;">
-                                <div style="text-align: center;">
-                                    <img src="imgs/Logo/versaoPrincipal.png" alt="Logo em 0 graus" style="max-width: 100px; transform: rotate(0deg);">
-                                    <p style="margin-top: 15px;"><strong>0° (Padrão)</strong></p>
+                                <h3>Versão Principal</h3>
+                                <div class="media-row">
+                                    <div class="media-image logo-box">
+                                        <img src="imgs/Logo/versaoPrincipal.png" alt="Logo Principal - A Toca do Lobo"
+                                            style="max-width: 100%; height: auto;">
+                                    </div>
+                                    <div class="media-text">
+                                        <h4>Versão Colorida (Preferencial)</h4>
+                                        <p>Esta é a versão primária do logo e deve ser usada sempre que possível. Combina o
+                                            ícone e o nome.</p>
+                                    </div>
                                 </div>
-                                <div style="text-align: center;">
-                                    <img src="imgs/Logo/versaoPrincipal.png" alt="Logo em 45 graus" style="max-width: 100px; transform: rotate(45deg);">
-                                    <p style="margin-top: 15px;"><strong>45°</strong></p>
+                                <h4>Versões Monocromáticas</h4>
+                                <p>Use em fundos onde a versão colorida não tem contraste suficiente.</p>
+                                <div class="media-row">
+                                    <div class="media-image logo-box">
+                                        <img src="imgs/Logo/versaoPrincipalPreta.png" alt="Logo Principal em Preto"
+                                            style="max-width: 80%;">
+                                    </div>
+                                    <div class="media-text">
+                                        <p>Versão preta para fundos claros, preservando contraste e legibilidade.</p>
+                                    </div>
                                 </div>
-                                <div style="text-align: center;">
-                                    <img src="imgs/Logo/versaoPrincipal.png" alt="Logo em 90 graus" style="max-width: 100px; transform: rotate(90deg);">
-                                    <p style="margin-top: 15px;"><strong>90°</strong></p>
+                                <div class="media-row">
+                                    <div class="media-image logo-box" style="background-color: #1a1a1a; padding: 20px; border: none;">
+                                        <img src="imgs/Logo/versaoPrincipalBranca.png" alt="Logo Principal em Branco"
+                                            style="max-width: 80%;">
+                                    </div>
+                                    <div class="media-text">
+                                        <p>Versão branca para fundos escuros, garantindo leitura sem perder o estilo.</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="pagination-nav"></div>
+                                <h3>Versão Ícone</h3>
+                                <div class="media-row">
+                                    <div class="media-image logo-box">
+                                        <img src="imgs/Logo/versaoIcone.png" alt="Ícone do Logo - A Toca do Lobo"
+                                            style="max-width: 150px; height: auto;">
+                                    </div>
+                                    <div class="media-text">
+                                        <h4>Versão Colorida</h4>
+                                        <p>O ícone pode ser usado isoladamente em contextos onde a marca já é bem conhecida,
+                                            como avatares de redes sociais ou favicons.</p>
+                                    </div>
+                                </div>
+                                <h4>Versões Monocromáticas</h4>
+                                <div class="media-row">
+                                    <div class="media-image logo-box">
+                                        <img src="imgs/Logo/versaoIconePreta.png" alt="Ícone em Preto"
+                                            style="max-width: 100px;">
+                                    </div>
+                                    <div class="media-text">
+                                        <p>Ícone preto para uso em fundos claros sem comprometer a leitura.</p>
+                                    </div>
+                                </div>
+                                <div class="media-row">
+                                    <div class="media-image logo-box" style="background-color: #1a1a1a; padding: 20px; border: none;">
+                                        <img src="imgs/Logo/versaoIconeBranca.png" alt="Ícone em Branco"
+                                            style="max-width: 100px;">
+                                    </div>
+                                    <div class="media-text">
+                                        <p>Ícone branco para fundos escuros, mantendo contraste e presença.</p>
+                                    </div>
+                                </div>
+
+                                <h3>Versão Texto</h3>
+                                <div class="media-row">
+                                    <div class="media-image logo-box">
+                                        <img src="imgs/Logo/versaoTexto.png"
+                                            alt="Logo em Texto - A Toca do Lobo" style="max-width: 100%; height: auto;">
+                                    </div>
+                                    <div class="media-text">
+                                        <p>A versão em texto pode ser usada quando o espaço é limitado ou em contextos onde o
+                                            ícone não é necessário.</p>
+                                    </div>
+                                </div>
+                                <h4>Versões Monocromáticas</h4>
+                                <div class="media-row">
+                                    <div class="media-image logo-box">
+                                        <img src="imgs/Logo/versaoTextoPreta.png" alt="Logo em Texto Preto"
+                                            style="max-width: 80%;">
+                                    </div>
+                                    <div class="media-text">
+                                        <p>Texto em preto para fundos claros, mantendo a leitura e a hierarquia visual.</p>
+                                    </div>
+                                </div>
+                                <div class="media-row">
+                                    <div class="media-image logo-box" style="background-color: #1a1a1a; padding: 20px; border: none;">
+                                        <img src="imgs/Logo/versaoTextoBranca.png" alt="Logo em Texto Branco"
+                                            style="max-width: 80%;">
+                                    </div>
+                                    <div class="media-text">
+                                        <p>Texto em branco para fundos escuros, garantindo contraste e consistência.</p>
+                                    </div>
+                                </div>
+
+                                <h3>Tamanho Mínimo</h3>
+                                <p>Para garantir a legibilidade e o impacto visual do logo, é crucial respeitar suas
+                                    dimensões mínimas de uso. Usar o logo em tamanhos menores que os recomendados pode
+                                    comprometer sua clareza e reconhecimento.</p>
+
+                                <h4>Uso em Impressos</h4>
+                                <p>Em materiais impressos, como cartões de visita ou panfletos, a largura mínima
+                                    recomendada para a versão principal do logo é de <strong>2cm</strong> de largura.
+                                </p>
+                                <div class="example-box"
+                                    style="text-align: center; background-color: transparent; border: none;">
+                                    <img src="imgs/Logo/tamanho-minimo-impresso.png"
+                                        alt="Tamanho mínimo do logo para impressão" style="max-width: 200px;">
+                                </div>
+
+                                <h4>Uso em Digital</h4>
+                                <p>Para telas e mídias digitais, como websites ou avatares, a largura mínima recomendada
+                                    é de <strong>50 pixels</strong> da largura.</p>
+                                <div class="example-box"
+                                    style="text-align: center; background-color: transparent; border: none;">
+                                    <img src="imgs/Logo/tamanho-minimo-digital.png"
+                                        alt="Tamanho mínimo do logo para uso digital" style="max-width: 200px;">
+                                </div>
+
+                                <h3>Rotação da Logo</h3>
+                                <h4>Uso do Ícone</h4>
+                                <p>Em espaços limitados onde a legibilidade do nome da marca é comprometida, deve-se
+                                    utilizar a versão do logo que contém apenas o ícone. Esta é a principal solução para
+                                    garantir a presença da marca em áreas restritas.</p>
+
+                                <h4>Rotação Permitida</h4>
+                                <p>Quando o uso do logo completo for a escolha ideal para a situação, ele poderá ser
+                                    rotacionado nos seguintes ângulos: 0° (padrão), 45° e 90°. Nenhuma outra angulação é
+                                    permitida, a fim de preservar a consistência e o reconhecimento da marca.</p>
+                                <div class="example-box-clean">
+                                    <div
+                                        style="display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; justify-items: center; gap: 20px;">
+                                        <div style="text-align: center;">
+                                            <img src="imgs/Logo/versaoPrincipal.png" alt="Logo em 0 graus"
+                                                style="max-width: 100px; transform: rotate(0deg);">
+                                            <p style="margin-top: 15px;"><strong>0° (Padrão)</strong></p>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <img src="imgs/Logo/versaoPrincipal.png" alt="Logo em 45 graus"
+                                                style="max-width: 100px; transform: rotate(45deg);">
+                                            <p style="margin-top: 15px;"><strong>45°</strong></p>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <img src="imgs/Logo/versaoPrincipal.png" alt="Logo em 90 graus"
+                                                style="max-width: 100px; transform: rotate(90deg);">
+                                            <p style="margin-top: 15px;"><strong>90°</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pagination-nav"></div>
                             </div>
                             <div class="sub-page" data-subpage-id="cores">
-                        <h2>Cores</h2>
-                        <h3>Cor Principal (Base)</h3>
-                        <p>A cor principal é um amarelo dourado vibrante, usado para elementos de destaque e interações primárias.</p>
-                        <div class="color-swatch" style="max-width: 250px; margin-top: 15px;">
-                            <div class="color-preview" style="background-color: #feda00; height: 150px;"></div>
-                            <div class="color-info"><strong>Base</strong><code>#feda00</code><code>rgb(254, 218, 0)</code></div>
-                        </div>
+                                <h2>Cores</h2>
+                                <h3>Cor Principal (Base)</h3>
+                                <p>A cor principal é um amarelo dourado vibrante, usado para elementos de destaque e
+                                    interações primárias.</p>
+                                <div class="color-swatch" style="max-width: 250px; margin-top: 15px;">
+                                    <div class="color-preview" style="background-color: #feda00; height: 150px;"></div>
+                                    <div class="color-info">
+                                        <strong>Base</strong><code>#feda00</code><code>rgb(254, 218, 0)</code>
+                                    </div>
+                                </div>
 
-                        <h4 style="margin-top: 30px;">Variações da Cor Principal</h4>
-                        <p>As variações garantem flexibilidade em diferentes contextos de UI, oferecendo tons mais claros e escuros.</p>
-                        <div class="color-grid">
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #feda00;"></div><div class="color-info"><strong>Base</strong><code>#feda00</code><code>rgb(254, 218, 0)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #fcf05a;"></div><div class="color-info"><strong>Clara</strong><code>#fcf05a</code><code>rgb(252, 240, 90)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #86772e;"></div><div class="color-info"><strong>Escura</strong><code>#86772e</code><code>rgb(134, 119, 46)</code></div></div>
-                        </div>
+                                <h4 style="margin-top: 30px;">Variações da Cor Principal</h4>
+                                <p>As variações garantem flexibilidade em diferentes contextos de UI, oferecendo tons
+                                    mais claros e escuros.</p>
+                                <div class="color-grid">
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #feda00;"></div>
+                                        <div class="color-info">
+                                            <strong>Base</strong><code>#feda00</code><code>rgb(254, 218, 0)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #fcf05a;"></div>
+                                        <div class="color-info">
+                                            <strong>Clara</strong><code>#fcf05a</code><code>rgb(252, 240, 90)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #86772e;"></div>
+                                        <div class="color-info">
+                                            <strong>Escura</strong><code>#86772e</code><code>rgb(134, 119, 46)</code>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <h3>Cores Neutras</h3>
-                        <p>A paleta de neutros é usada para textos, fundos e elementos de UI, garantindo legibilidade e uma base visual sólida para o jogo.</p>
-                        <div class="color-grid">
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #212121;"></div><div class="color-info"><strong>Escura</strong><code>#212121</code><code>rgb(33, 33, 33)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #FFFFFF;"></div><div class="color-info"><strong>Clara</strong><code>#FFFFFF</code><code>rgb(255, 255, 255)</code></div></div>
-                        </div>
+                                <h3>Cores Neutras</h3>
+                                <p>A paleta de neutros é usada para textos, fundos e elementos de UI, garantindo
+                                    legibilidade e uma base visual sólida para o jogo.</p>
+                                <div class="color-grid">
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #212121;"></div>
+                                        <div class="color-info">
+                                            <strong>Escura</strong><code>#212121</code><code>rgb(33, 33, 33)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #FFFFFF;"></div>
+                                        <div class="color-info">
+                                            <strong>Clara</strong><code>#FFFFFF</code><code>rgb(255, 255, 255)</code>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        <h4 style="margin-top: 30px;">Variações Neutras</h4>
-                        <p>Uma escala de cinzas para criar profundidade e hierarquia visual nos componentes da interface.</p>
-                        <div class="color-grid">
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #212121;"></div><div class="color-info"><strong>900</strong><code>#212121</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #454342;"></div><div class="color-info"><strong>800</strong><code>#454342</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #6e6c6b;"></div><div class="color-info"><strong>700</strong><code>#6e6c6b</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #a2a09f;"></div><div class="color-info"><strong>200</strong><code>#a2a09f</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #e3e3e3;"></div><div class="color-info"><strong>100</strong><code>#e3e3e3</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #FFFFFF; border: 1px solid #f2f2f2"></div><div class="color-info"><strong>000</strong><code>#FFFFFF</code></div></div>
-                        </div>
+                                <h4 style="margin-top: 30px;">Variações Neutras</h4>
+                                <p>Uma escala de cinzas para criar profundidade e hierarquia visual nos componentes da
+                                    interface.</p>
+                                <div class="color-grid">
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #212121;"></div>
+                                        <div class="color-info"><strong>900</strong><code>#212121</code></div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #454342;"></div>
+                                        <div class="color-info"><strong>800</strong><code>#454342</code></div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #6e6c6b;"></div>
+                                        <div class="color-info"><strong>700</strong><code>#6e6c6b</code></div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #a2a09f;"></div>
+                                        <div class="color-info"><strong>200</strong><code>#a2a09f</code></div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #e3e3e3;"></div>
+                                        <div class="color-info"><strong>100</strong><code>#e3e3e3</code></div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview"
+                                            style="background-color: #FFFFFF; border: 1px solid #f2f2f2"></div>
+                                        <div class="color-info"><strong>000</strong><code>#FFFFFF</code></div>
+                                    </div>
+                                </div>
 
-                        <h3>Cores Secundárias</h3>
-                        <p>Usadas para feedback, status e elementos que precisam de atenção especial, como alertas, sucesso ou informações contextuais.</p>
+                                <h3>Cores Secundárias</h3>
+                                <p>Usadas para feedback, status e elementos que precisam de atenção especial, como
+                                    alertas, sucesso ou informações contextuais.</p>
 
-                        <h4 style="margin-top: 30px;">Azul</h4>
-                        <div class="color-grid">
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #4694c3;"></div><div class="color-info"><strong>Base</strong><code>#4694c3</code><code>rgb(70, 148, 195)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #64b8e0;"></div><div class="color-info"><strong>Clara</strong><code>#64b8e0</code><code>rgb(100, 184, 224)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #0c4d6b;"></div><div class="color-info"><strong>Escura</strong><code>#0c4d6b</code><code>rgb(12, 77, 107)</code></div></div>
-                        </div>
-                        <h4 style="margin-top: 30px;">Verde</h4>
-                        <div class="color-grid">
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #a0ce5f;"></div><div class="color-info"><strong>Base</strong><code>#a0ce5f</code><code>rgb(160, 206, 95)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #c8de82;"></div><div class="color-info"><strong>Clara</strong><code>#c8de82</code><code>rgb(200, 222, 130)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #476931;"></div><div class="color-info"><strong>Escura</strong><code>#476931</code><code>rgb(71, 105, 49)</code></div></div>
-                        </div>
-                        <h4 style="margin-top: 30px;">Roxo</h4>
-                        <div class="color-grid">
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #9252a0;"></div><div class="color-info"><strong>Base</strong><code>#9252a0</code><code>rgb(146, 82, 160)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #be8bbe;"></div><div class="color-info"><strong>Clara</strong><code>#be8bbe</code><code>rgb(190, 139, 190)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #44194f;"></div><div class="color-info"><strong>Escura</strong><code>#44194f</code><code>rgb(68, 25, 79)</code></div></div>
-                        </div>
-                        <h4 style="margin-top: 30px;">Vermelho</h4>
-                        <div class="color-grid">
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #d64646;"></div><div class="color-info"><strong>Base</strong><code>#d64646</code><code>rgb(214, 70, 70)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #e27a7a;"></div><div class="color-info"><strong>Clara</strong><code>#e27a7a</code><code>rgb(226, 122, 122)</code></div></div>
-                            <div class="color-swatch"><div class="color-preview" style="background-color: #841819;"></div><div class="color-info"><strong>Escura</strong><code>#841819</code><code>rgb(132, 24, 25)</code></div></div>
-                        </div>
-                        <div class="pagination-nav"></div>
+                                <h4 style="margin-top: 30px;">Azul</h4>
+                                <div class="color-grid">
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #4694c3;"></div>
+                                        <div class="color-info">
+                                            <strong>Base</strong><code>#4694c3</code><code>rgb(70, 148, 195)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #64b8e0;"></div>
+                                        <div class="color-info">
+                                            <strong>Clara</strong><code>#64b8e0</code><code>rgb(100, 184, 224)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #0c4d6b;"></div>
+                                        <div class="color-info">
+                                            <strong>Escura</strong><code>#0c4d6b</code><code>rgb(12, 77, 107)</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 style="margin-top: 30px;">Verde</h4>
+                                <div class="color-grid">
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #a0ce5f;"></div>
+                                        <div class="color-info">
+                                            <strong>Base</strong><code>#a0ce5f</code><code>rgb(160, 206, 95)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #c8de82;"></div>
+                                        <div class="color-info">
+                                            <strong>Clara</strong><code>#c8de82</code><code>rgb(200, 222, 130)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #476931;"></div>
+                                        <div class="color-info">
+                                            <strong>Escura</strong><code>#476931</code><code>rgb(71, 105, 49)</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 style="margin-top: 30px;">Roxo</h4>
+                                <div class="color-grid">
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #9252a0;"></div>
+                                        <div class="color-info">
+                                            <strong>Base</strong><code>#9252a0</code><code>rgb(146, 82, 160)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #be8bbe;"></div>
+                                        <div class="color-info">
+                                            <strong>Clara</strong><code>#be8bbe</code><code>rgb(190, 139, 190)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #44194f;"></div>
+                                        <div class="color-info">
+                                            <strong>Escura</strong><code>#44194f</code><code>rgb(68, 25, 79)</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 style="margin-top: 30px;">Vermelho</h4>
+                                <div class="color-grid">
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #d64646;"></div>
+                                        <div class="color-info">
+                                            <strong>Base</strong><code>#d64646</code><code>rgb(214, 70, 70)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #e27a7a;"></div>
+                                        <div class="color-info">
+                                            <strong>Clara</strong><code>#e27a7a</code><code>rgb(226, 122, 122)</code>
+                                        </div>
+                                    </div>
+                                    <div class="color-swatch">
+                                        <div class="color-preview" style="background-color: #841819;"></div>
+                                        <div class="color-info">
+                                            <strong>Escura</strong><code>#841819</code><code>rgb(132, 24, 25)</code>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pagination-nav"></div>
                             </div>
-                            <div class="sub-page" data-subpage-id="tipografia"> 
-                        <h2>Tipografia</h2>
-                        <p>A tipografia do projeto utiliza a família <strong>PixelOperator</strong>, com pesos <strong>Regular</strong> e <strong>Bold</strong>, reforçando a estética retrô/pixel art e garantindo legibilidade nas interfaces.</p>
+                            <div class="sub-page" data-subpage-id="tipografia">
+                                <h2>Tipografia</h2>
+                                <p>A tipografia do projeto utiliza a família <strong>PixelOperator</strong>, com pesos
+                                    <strong>Regular</strong> e <strong>Bold</strong>, reforçando a estética retrô/pixel
+                                    art e garantindo legibilidade nas interfaces.
+                                </p>
 
-                    
-                        <div class="example-box">
-                            <p style="margin: 0 0 8px 0;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
-                            <p style="margin: 0 0 8px 0;">abcdefghijklmnopqrstuvwxyz</p>
-                            <p style="margin: 0 0 8px 0;">0123456789</p>
-                            <p style="margin: 0 0 8px 0;">-«+»!?.*&#92;/()£€$¥¢+−±×÷=≠≈&lt;&gt;≤</p>
-                            <p style="margin: 0;">ċðđłĵğſþŧřßŋąŀēıőķůỳ</p>
+
+                                <div class="example-box">
+                                    <p style="margin: 0 0 8px 0;">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                                    <p style="margin: 0 0 8px 0;">abcdefghijklmnopqrstuvwxyz</p>
+                                    <p style="margin: 0 0 8px 0;">0123456789</p>
+                                    <p style="margin: 0 0 8px 0;">-«+»!?.*&#92;/()£€$¥¢+−±×÷=≠≈&lt;&gt;≤</p>
+                                    <p style="margin: 0;">ċðđłĵğſþŧřßŋąŀēıőķůỳ</p>
+                                </div>
+
+
+                                <h3>Pesos</h3>
+                                <div class="example-box">
+                                    <p style="font-weight: normal; margin: 0 0 6px 0;">Regular</p>
+                                    <p style="font-weight: bold; margin: 0;">Bold</p>
+                                </div>
+
+                                <div class="pagination-nav"></div>
+                            </div>
+                            <div class="sub-page" data-subpage-id="tipografia-manuscrita">
+                                <h2>Tipografia Desenhada</h2>
+                                <p>Estará presente no jogo tipografias manuscritas. São letras ilustradas manualmente
+                                    para cartazes, placas, bilhetes, documentos, trazendo irregularidade e um tom humano
+                                    para o mundo de São Pônei.</p>
+
+                                <h3>Onde usar</h3>
+                                <ul>
+                                    <li>Documentos, anotações, cartazes</li>
+                                    <li>Apps, Celular</li>
+                                </ul>
+
+
+                                <div class="pagination-nav"></div>
+                            </div>
+                            <div class="sub-page" data-subpage-id="layout">
+                                <h2>Layout</h2>
+                                <p>Diretrizes gerais de composição das telas para manter legibilidade, ritmo visual e
+                                    coerência entre páginas.</p>
+
+                                <h3>Margem das bordas das telas</h3>
+                                <ul>
+                                    <li>Mantenha área segura nas bordas para evitar corte de conteúdo.</li>
+                                </ul>
+
+                                <h3>Posição de botões</h3>
+                                <ul>
+                                    <li>Botão primário preferencialmente na parte inferior direita.</li>
+                                    <li>Use espaçamento consistente entre botões e elementos próximos.</li>
+                                </ul>
+
+                                <h3>Grid</h3>
+                                <p>Utilizamos duas estruturas recorrentes: divisão em 3 colunas (3/3) e conteúdo
+                                    centralizado.</p>
+                                <div class="pagination-nav"></div>
+                            </div>
                         </div>
-                        
-
-                        <h3>Pesos</h3>
-                        <div class="example-box">
-                            <p style="font-weight: normal; margin: 0 0 6px 0;">Regular</p>
-                            <p style="font-weight: bold; margin: 0;">Bold</p>
-                        </div>
-
-                            <div class="pagination-nav"></div>
-                            </div>
-                            <div class="sub-page" data-subpage-id="tipografia-manuscrita"> 
-                        <h2>Tipografia Desenhada</h2>
-                        <p>Estará presente no jogo tipografias manuscritas. São letras ilustradas manualmente para cartazes, placas, bilhetes, documentos, trazendo irregularidade e um tom humano para o mundo de São Pônei.</p>
-
-                        <h3>Onde usar</h3>
-                        <ul>
-                            <li>Documentos, anotações, cartazes</li>
-                            <li>Apps, Celular</li>
-                        </ul>
-
-
-                        <div class="pagination-nav"></div>
-                            </div>
-                            <div class="sub-page" data-subpage-id="layout"> 
-                        <h2>Layout</h2>
-                        <p>Diretrizes gerais de composição das telas para manter legibilidade, ritmo visual e coerência entre páginas.</p>
-
-                        <h3>Margem das bordas das telas</h3>
-                        <ul>
-                            <li>Mantenha área segura nas bordas para evitar corte de conteúdo.</li>
-                        </ul>
-
-                        <h3>Posição de botões</h3>
-                        <ul>
-                            <li>Botão primário preferencialmente na parte inferior direita.</li>
-                            <li>Use espaçamento consistente entre botões e elementos próximos.</li>
-                        </ul>
-
-                        <h3>Grid</h3>
-                        <p>Utilizamos duas estruturas recorrentes: divisão em 3 colunas (3/3) e conteúdo centralizado.</p>
-                        <div class="pagination-nav"></div>
-                            </div>
                     </div>
                 </div>
-                    </div>
             </div>
             <div id="page-componentes" class="page">
-                    <header class="page-header bg-secondary-red">
-                        <div class="page-header-inner">
-                            <h1 class="text-light">Componentes</h1>
-                            <p class="subtitle text-light">Elementos de UI interativos que formam a base do gameplay.</p>
-                        </div>
-                    </header>
-                    <div class="page-content">
-                        <div class="page-body-container">
+                <header class="page-header bg-secondary-red">
+                    <div class="page-header-inner">
+                        <h1 class="text-light">Componentes</h1>
+                        <p class="subtitle text-light">Elementos de UI interativos que formam a base do gameplay.</p>
+                    </div>
+                </header>
+                <div class="page-content">
+                    <div class="page-body-container">
                         <div class="sub-page-wrapper">
                             <div class="sub-page" data-subpage-id="botoes">
-                        <h2>Botões</h2>
-     
-                        <div class="pagination-nav"></div>
+                                <h2>Botões</h2>
+                                <p>Nossa interface prioriza a imersão, por isso dividimos os botões em duas categorias principais: os que fazem parte do cenário e os que servem como UI padrão.</p>
+
+                                <h3>Botões de Cenário (Personalizados)</h3>
+                                <p>Seguindo o fundamento de "Interface que é Gameplay", a prioridade é transformar objetos do cenário em botões interativos que parecem pertencer ao mundo de São Pônei.</p>
+                                <ul>
+                                    <li><strong>O que são:</strong> Objetos diegéticos que reagem ao clique do jogador, sem cara de UI colada na tela.</li>
+                                    <li><strong>Exemplos:</strong>
+                                        <ul>
+                                            <li><strong>Celular:</strong> O aparelho em cima da mesa funciona como botão para abrir a interface de apps.</li>
+                                            <li><strong>Menu Inicial:</strong> As opções de "Jogar" ou "Sair" são áreas específicas dentro de um documento que devem ser carimbadas pelo jogador.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <h3>Botões Padrão (Comuns)</h3>
+                                <p>Usados em telas de sistema, pop-ups ou menus de pausa, quando a clareza da ação é prioritária.</p>
+                                <ul>
+                                    <li><strong>Fundo:</strong> Preenchimento total em Amarelo Principal.</li>
+                                    <li><strong>Texto:</strong> Cor preta, centralizado, usando a tipografia do sistema.</li>
+                                    <li><strong>Bordas:</strong> Pixelizadas, sem arredondamento suave, mantendo a estética crisp e retrô.</li>
+                                </ul>
+
+                                <div class="pagination-nav"></div>
                             </div>
                             <div class="sub-page">
                                 <h2>Documentos</h2>
-                                <h3>Sempre seguem um padrão</h3>
-                                <p></p>
-                                <h3>Variações no comprovante de endereço</h3>
-                                <p></p>
+                                <p>A jogabilidade central de "A Toca do Lobo" é inspecionar e validar documentos. A clareza e a consistência visual desses componentes são essenciais.</p>
+
+                                <h3>Registro Animal (RA)</h3>
+                                <p>Documento de identidade fundamental do mundo de São Pônei e principal fonte de validação.</p>
+                                <ul>
+                                    <li><strong>Consistência visual:</strong> Layout e estilo gráfico são imutáveis; apenas os textos mudam.</li>
+                                    <li><strong>Variáveis de texto:</strong> Nome, Raça, Número de Registro (RA), Data de Nascimento e demais campos de identificação.</li>
+                                </ul>
+
+                                <h3>Pedido de Empréstimo</h3>
+                                <p>Formulário que formaliza a solicitação financeira e especifica o valor desejado.</p>
+                                <ul>
+                                    <li><strong>Consistência visual:</strong> Visual fixo e padronizado como um template de formulário.</li>
+                                    <li><strong>Variáveis de texto:</strong> Nome do solicitante, Número do RA e o valor monetário exato do empréstimo.</li>
+                                </ul>
+
+                                <h3>Comprovante de Endereço</h3>
+                                <p>Documento para verificar residência; permite variações sutis para simular diferentes emissoras.</p>
+                                <ul>
+                                    <li><strong>Padrão estrutural:</strong> Layout principal deve ser mantido, independentemente da variação (água, luz, telefone).</li>
+                                    <li><strong>Variações permitidas:</strong> Pequenas mudanças no cabeçalho, cor de destaque da fonte ou logotipo da emissora. As informações críticas (Nome e Endereço) seguem o mesmo padrão.</li>
+                                </ul>
                                 <div class="pagination-nav"></div>
                             </div>
                             <div class="sub-page">
                                 <h2>Carimbo</h2>
-                                <h3>Impressão do carimbo</h3>
-                                <p></p>
+                                <p>Os carimbos são as ferramentas principais de decisão do jogador. Representam a palavra final do Auugustão e, seguindo a interface diegética, também funcionam como cursores de seleção no menu inicial.</p>
+
+                                <h3>Os Objetos Físicos</h3>
+                                <p>Dois carimbos distintos ficam sempre disponíveis; a diferenciação visual precisa ser imediata.</p>
+                                <ul>
+                                    <li><strong>Carimbo de Aprovação:</strong> Corpo na cor verde, indicando uma ação positiva ou de confirmação.</li>
+                                    <li><strong>Carimbo de Recusa:</strong> Corpo na cor vermelha, indicando uma ação negativa, de negação ou cancelamento.</li>
+                                </ul>
+
+                                <h3>A Marca (Impressão)</h3>
+                                <p>Ao interagir com um documento ou opção de menu, o carimbo deixa a marca de tinta como feedback definitivo.</p>
+                                <ul>
+                                    <li><strong>Marca de Aprovado:</strong> Impressão em tinta verde, com dizeres de confirmação (ex: “APROVADO”).</li>
+                                    <li><strong>Marca de Recusado:</strong> Impressão em tinta vermelha, com design mais pesado e dizeres de negação (ex: “RECUSADO”).</li>
+                                </ul>
+                                <div class="pagination-nav"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-fundamentos" class="page">
+                <header class="page-header bg-secondary-blue">
+                    <div class="page-header-inner">
+                        <h1 class="text-light">Fundamentos</h1>
+                        <p class="subtitle text-light">Aqui a gente define as ideias principais do nosso jogo. É um guia
+                            rápido pra gente não se perder e garantir que tudo o que a gente criar tenha a mesma vibe.
+                        </p>
+                    </div>
+                </header>
+                <div class="page-content">
+                    <div class="page-body-container">
+                        <div class="sub-page-wrapper">
+                            <div class="sub-page" data-subpage-id="a-vibe-do-jogo">
+                                <h2>A vibe do jogo</h2>
+                                <p>O nosso lance é misturar duas coisas: representatividade e diversão.</p>
+                                <p>O jogo se passa numa <b>quebrada</b> de uma São Paulo Fictícia chamada São Pônei,
+                                    então a interface tem que ter essa cara, para as pessoas se identificarem. Ao mesmo
+                                    tempo, o clima do jogo é divertido, bem colorido e com personagens carismáticos. A
+                                    interface tem que ser assim também.</p>
+                                <div class="pagination-nav"></div>
+                            </div>
+                            <div class="sub-page" data-subpage-id="como-a-gente-fala-com-o-jogador">
+                                <h2>Como "falamos" com o jogador</h2>
+                                <p>A gente quer que o jogador se sinta dentro do personagem. A câmera do jogo é os olhos
+                                    dele. Quando abre um menu, na real ele tá pegando o celular ou vendo algum
+                                    documento.</p>
+                                <h3>Tom de voz: Gíria de São Paulo.</h3>
+                                <p>O jogo fala como o Augustão falaria. A gente usa gírias e um jeito de falar mais da
+                                    rua, pra ser engraçado e conectar com o jogador.</p>
+                                <p>E o maior exemplo disso é nos dialogos dentro do jogo, onde os clientes falam usando
+                                    muitas gírias locais de uma quebrada de São Paulo. Gírias como "Quebrada, Suave,
+                                    Chefe, Zika, Qual que é a fita" e outros.</p>
+                                <p>Mas para representar São Paulo, não da para ter apenas essa gírias, pois São Paulo é
+                                    uma grande mistura de várias estados do Brasil, dos estrangeiros que vem para cá em
+                                    busco de trabalho ou outros objetivos, então temos outros NPCs que usam gírias de
+                                    outros estados, mas em menor quantidade do que as gírias de São Paulo.</p>
+                                <h3>O que a gente não faz:</h3>
+                                <p>Usar palavras difíceis ou um tom sério demais.</p>
+                                <div class="pagination-nav"></div>
+                            </div>
+                            <div class="sub-page" data-subpage-id="interface-que-e-gameplay">
+                                <h2>Interface que é Gameplay</h2>
+                                <p>A regra principal é: não temos menus normais.</p>
+                                <p>Tudo na nossa interface é interativo e faz parte do jogo. O jogador não vai clicar em
+                                    botões numa tela, ele vai mexer em objetos do cenário.</p>
+                                <p><strong>Exemplo 1:</strong> O menu inicial é um documento que o jogador precisa
+                                    carimbar. As opções "começar jogo" ou "continuar" são os lugares onde ele pode bater
+                                    o carimbo.</p>
+                                <p><strong>Exemplo 2:</strong> Pra mostrar se o jogador ganhou ou perdeu, aparece um
+                                    jornal na tela com a manchete da notícia.</p>
+                                <p>A ideia é que o jogador nunca sinta que pausou o jogo pra ver um menu. A experiência
+                                    é uma coisa só, do começo ao fim.</p>
+                                <div class="pagination-nav"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="page-ilustracao" class="page">
+                <header class="page-header bg-secondary-purple">
+                    <div class="page-header-inner">
+                        <h1 class="text-light">Ilustração</h1>
+                        <p class="subtitle text-light">Diretrizes para o estilo de arte, personagens e cenários.</p>
+                    </div>
+                </header>
+                <div class="page-content">
+                    <div class="page-body-container">
+                        <div class="sub-page-wrapper">
+                            <div class="sub-page">
+                                <h2>Estilo de Ilustração: Pixel Art</h2>
+                                <div class="illustration-style-row">
+                                    <div class="illustration-style-item">
+                                        <img src="imgs/estilo01.png" alt="Exemplo de ilustração pixel art 1">
+                                    </div>
+                                    <div class="illustration-style-item">
+                                        <img src="imgs/estilo02.png" alt="Exemplo de ilustração pixel art 2">
+                                    </div>
+                                    <div class="illustration-style-item">
+                                        <img src="imgs/estilo03.png" alt="Exemplo de ilustração pixel art 3">
+                                    </div>
+                                </div>
+                                <h3>Por que foi escolhido?</h3>
+                                <p>A escolha do pixel art para &quot;A Toca do Lobo&quot; é uma decisão de design
+                                    estratégica e multifacetada. O estilo funciona como uma ferramenta de comédia,
+                                    suavizando a premissa de um &quot;lobo-guará agiota&quot; e permitindo que o jogo
+                                    seja divertido e charmoso, em vez de sombrio. Ele captura perfeitamente a
+                                    &quot;brasilidade&quot; de quebrada com um filtro cômico.</p>
+                                <p>O pixel art também garante a clareza total da interface — essencial para um jogo de
+                                    inspeção de documentos — e representa uma escolha viável para uma produção indie.
+                                </p>
                                 <div class="pagination-nav"></div>
                             </div>
                             <div class="sub-page">
-                                <h2>Celular</h2>
-                                <h3>Ícones dos apps</h3>
-                                <p>ícones dos aplicativos que aparecem na tela do celular.</p>
-                                <h3>Conversas do app de mensagem</h3>
-                                <p>Padrões para balões de diálogo, cores para remetente e destinatário, e tipografia.</p>
-                                <h3>Mapa</h3>
-                                <p>Estilo visual do mapa.</p>
+                                <h2>Diretrizes para Personagens</h2>
+                                <p>Os personagens tem um estilo Cartoon mas em Pixel-art, com personagens
+                                    antropomórficos com animais humanizados, com formas simplificadas e traços
+                                    exagerados, como olhos desproporcionais e expressivos.</p>
+                                <h3>Cores</h3>
+                                <p>Os personagens seguem uma paleta de cores especifica, baseada na paleta de cor da
+                                    identidade visual.</p>
+                                <h3>Traçado</h3>
+                                <p>Todos os personagens são tracejados, na cor preta #212121, com 1px de grossura.</p>
+                                <h3>Tipos de animais</h3>
+                                <p>Esses são os animais permitidos de usar no jogo para criar mais variações:</p>
+                                <ul>
+                                    <li>Cachorro Fiapo de Manga</li>
+                                    <li>Capivara</li>
+                                    <li>Cavalo</li>
+                                    <li>Gato</li>
+                                    <li>Onça</li>
+                                    <li>Pombo</li>
+                                    <li>Sapo</li>
+                                    <li>Urubu</li>
+                                    <li>Tucano</li>
+                                    <li>Sagui</li>
+                                    <li>Rato</li>
+                                    <li>Bicho Preguiça</li>
+                                </ul>
+                                <h3>Ângulo</h3>
+                                <p>Os personagens estão sempre no mesmo ângulo, de frente pra câmera, em uma pesperctiva
+                                    frontal.</p>
+                                <h3>Pose</h3>
+                                <p>Eles estão sempre na mesma pose, em pé, com os braços para baixo e olhando para
+                                    frente</p>
+                                <h3>Iluminação</h3>
+                                <p>Os personagens tem apenas 1 camada de sombra e 1 camada de luz</p>
+                                <h3>Trajes</h3>
+                                <p>Os clientes tem acessórios, e pode usar combinações diferentes desses acessórios a
+                                    criar personagens diferentes.</p>
+
                                 <div class="pagination-nav"></div>
                             </div>
-                            <div class="sub-page" data-subpage-id="caixa-de-dialogos">
-                        <h2>Diálogo</h2>
-                        <h3>Tipografia usada</h3>
-                        <p></p>
-                        <h3>Background</h3>
-                        <p></p>
-                        <h3>Cores</h3>
-                        <p></p>
-                        <div class="pagination-nav"></div>
-                            </div>
                         </div>
+                    </div>
                 </div>
-                    </div>
-            </div>
-            <div id="page-fundamentos" class="page">
-                    <header class="page-header bg-secondary-blue">
-                        <div class="page-header-inner">
-                            <h1 class="text-light">Fundamentos</h1>
-                            <p class="subtitle text-light">Aqui a gente define as ideias principais do nosso jogo. É um guia rápido pra gente não se perder e garantir que tudo o que a gente criar tenha a mesma vibe.</p>
-                        </div>
-                    </header>
-                    <div class="page-content">
-                        <div class="page-body-container">
-                        <div class="sub-page-wrapper">
-                            <div class="sub-page" data-subpage-id="a-vibe-do-jogo">
-                        <h2>A vibe do jogo</h2>
-                        <p>O nosso lance é misturar duas coisas: representatividade e diversão.</p>
-                        <p>O jogo se passa numa <b>quebrada</b> de uma São Paulo Fictícia chamada São Pônei, então a interface tem que ter essa cara, para as pessoas se identificarem. Ao mesmo tempo, o clima do jogo é divertido, bem colorido e com personagens carismáticos. A interface tem que ser assim também.</p>
-                        <div class="pagination-nav"></div>
-                            </div>
-                            <div class="sub-page" data-subpage-id="como-a-gente-fala-com-o-jogador">
-                        <h2>Como "falamos" com o jogador</h2>
-                        <p>A gente quer que o jogador se sinta dentro do personagem. A câmera do jogo é os olhos dele. Quando abre um menu, na real ele tá pegando o celular ou vendo algum documento.</p>
-                        <h3>Tom de voz: Gíria de São Paulo.</h3>
-                        <p>O jogo fala como o Augustão falaria. A gente usa gírias e um jeito de falar mais da rua, pra ser engraçado e conectar com o jogador.</p>
-                        <p>E o maior exemplo disso é nos dialogos dentro do jogo, onde os clientes falam usando muitas gírias locais de uma quebrada de São Paulo. Gírias como "Quebrada, Suave, Chefe, Zika, Qual que é a fita" e outros.</p>
-                        <p>Mas para representar São Paulo, não da para ter apenas essa gírias, pois São Paulo é uma grande mistura de várias estados do Brasil, dos estrangeiros que vem para cá em busco de trabalho ou outros objetivos, então temos outros NPCs que usam gírias de outros estados, mas em menor quantidade do que as gírias de São Paulo.</p>
-                        <h3>O que a gente não faz:</h3>
-                        <p>Usar palavras difíceis ou um tom sério demais.</p>
-                        <div class="pagination-nav"></div>
-                            </div>
-                            <div class="sub-page" data-subpage-id="interface-que-e-gameplay">
-                        <h2>Interface que é Gameplay</h2>
-                        <p>A regra principal é: não temos menus normais.</p>
-                        <p>Tudo na nossa interface é interativo e faz parte do jogo. O jogador não vai clicar em botões numa tela, ele vai mexer em objetos do cenário.</p>
-                        <p><strong>Exemplo 1:</strong> O menu inicial é um documento que o jogador precisa carimbar. As opções "começar jogo" ou "continuar" são os lugares onde ele pode bater o carimbo.</p>
-                        <p><strong>Exemplo 2:</strong> Pra mostrar se o jogador ganhou ou perdeu, aparece um jornal na tela com a manchete da notícia.</p>
-                        <p>A ideia é que o jogador nunca sinta que pausou o jogo pra ver um menu. A experiência é uma coisa só, do começo ao fim.</p>
-                        <div class="pagination-nav"></div>
-                    </div>
-                        </div>
-                </div>
-                    </div>
-            </div>
-            <div id="page-ilustracao" class="page">
-                    <header class="page-header bg-secondary-purple">
-                        <div class="page-header-inner">
-                            <h1 class="text-light">Ilustração</h1>
-                            <p class="subtitle text-light">Diretrizes para o estilo de arte, personagens e cenários.</p>
-                        </div>
-                    </header>
-                    <div class="page-content">
-                        <div class="page-body-container">
-                            <div class="sub-page-wrapper">
-                                <div class="sub-page">
-                                    <h2>Estilo de Ilustração: Pixel Art</h2>
-                                    <h3>Por que foi escolhido?</h3>
-                                    <p>A escolha do pixel art para &quot;A Toca do Lobo&quot; é uma decisão de design estratégica e multifacetada. O estilo funciona como uma ferramenta de comédia, suavizando a premissa de um &quot;lobo-guará agiota&quot; e permitindo que o jogo seja divertido e charmoso, em vez de sombrio. Ele captura perfeitamente a &quot;brasilidade&quot; de quebrada com um filtro cômico.</p>
-                                    <p>O pixel art também garante a clareza total da interface — essencial para um jogo de inspeção de documentos — e representa uma escolha viável para uma produção indie.</p>
-                                    <div class="pagination-nav"></div>
-                                </div>
-                                <div class="sub-page">
-                                    <h2>Diretrizes para Personagens</h2>
-                                    <p>Os personagens tem um estilo Cartoon mas em Pixel-art, com personagens antropomórficos com animais humanizados, com formas simplificadas e traços exagerados, como olhos desproporcionais e expressivos.</p>
-                                    <h3>Cores</h3>
-                                    <p>Os personagens seguem uma paleta de cores especifica, baseada na paleta de cor da identidade visual.</p>
-                                    <h3>Traçado</h3>
-                                    <p>Todos os personagens são tracejados, na cor preta #212121, com 1px de grossura.</p>
-                                    <h3>Tipos de animais</h3>
-                                    <p>Esses são os animais permitidos de usar no jogo para criar mais variações:</p>
-                                    <ul>
-                                        <li>Cachorro Fiapo de Manga</li>
-                                        <li>Capivara</li>
-                                        <li>Cavalo</li>
-                                        <li>Gato</li>
-                                        <li>Onça</li>
-                                        <li>Pombo</li>
-                                        <li>Sapo</li>
-                                        <li>Urubu</li>
-                                        <li>Tucano</li>
-                                        <li>Sagui</li>
-                                        <li>Rato</li>
-                                        <li>Bicho Preguiça</li>
-                                    </ul>
-                                    <h3>Ângulo</h3>
-                                    <p>Os personagens estão sempre no mesmo ângulo, de frente pra câmera, em uma pesperctiva frontal.</p>
-                                    <h3>Pose</h3>
-                                    <p>Eles estão sempre na mesma pose, em pé, com os braços para baixo e olhando para frente</p>
-                                    <h3>Iluminação</h3>
-                                    <p>Os personagens tem apenas 1 camada de sombra e 1 camada de luz</p>
-                                    <h3>Trajes</h3>
-                                    <p>Os clientes tem acessórios, e pode usar combinações diferentes desses acessórios a criar personagens diferentes.</p>
-
-                                    <div class="pagination-nav"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
             </div>
             <div id="page-interacoes" class="page">
-                        <header class="page-header bg-secondary-blue">
-                            <div class="page-header-inner">
-                                <h1>Interações</h1>
-                                <p class="subtitle">Padrões de feedback visual e usabilidade para o jogador.</p>
+                <header class="page-header bg-secondary-blue">
+                    <div class="page-header-inner">
+                        <h1>Interações</h1>
+                        <p class="subtitle">Padrões de feedback visual e usabilidade para o jogador.</p>
+                    </div>
+                </header>
+                <div class="page-content">
+                    <div class="page-body-container">
+                        <div class="sub-page-wrapper">
+                            <div class="sub-page">
+                                <h2>Mouse</h2>
+                                <p>O cursor é a extensão física do protagonista dentro do escritório e reforça que o jogador é o Augustão.</p>
+
+                                <h3>Mão do Augustão (Cursor)</h3>
+                                <p>Substituímos o cursor padrão por um sprite em pixel art da mão peluda do Lobo Guará.</p>
+                                <ul>
+                                    <li><strong>Comportamento:</strong> A mão flutua sobre a interface e segue o movimento do mouse em tempo real.</li>
+                                </ul>
+
+                                <h3>Variações de Sprite</h3>
+                                <p>O sprite muda de estado conforme a ação para dar feedback claro.</p>
+                                <ul>
+                                    <li><strong>Mão apontando (Idle):</strong> Estado padrão de navegação, indicando que o jogador está livre para explorar ou escolher um objeto.</li>
+                                    <li><strong>Mão segurando (Grab):</strong> Ao clicar e segurar para arrastar um documento ou carimbo, a mão assume pose de “pegada”, confirmando que o objeto foi capturado.</li>
+                                </ul>
+                                <div class="pagination-nav"></div>
                             </div>
-                        </header>
-                    <div class="page-content">
-                        <div class="page-body-container">
-                            <div class="sub-page-wrapper">
-                                <div class="sub-page">
-                                    <h2>Mouse</h2>
-                                    <h3>Mão que sempre acompanha o mouse</h3>
-                                    <p>Descrever o comportamento e a aparência do cursor customizado em formato de mão.</p>
-                                    <h3>Variações de Sprite</h3>
-                                    <p>Exemplos das diferentes aparências da mão (aberta, fechada, apontando) para diferentes interações.</p>
-                                    <div class="pagination-nav"></div>
-                                </div>
-                                <div class="sub-page">
-                                    <h2>Inputs</h2>
-                                    <h3>Mouse</h3>
-                                    <ul>
-                                        <li><strong>Click:</strong> Detalhes sobre o feedback visual e sonoro de um clique simples.</li>
-                                        <li><strong>Click e Arraste:</strong> Como a interface responde ao arrastar de objetos, como documentos.</li>
-                                    </ul>
-                                    <h3>Touch</h3>
-                                    <ul>
-                                        <li><strong>Toque:</strong> Equivalente ao clique, descrever o feedback para toques na tela.</li>
-                                        <li><strong>Arrastar:</strong> Como funciona a mecânica de arrastar em dispositivos de toque.</li>
-                                    </ul>
-                                    <div class="pagination-nav"></div>
-                                </div>
+                            <div class="sub-page">
+                                <h2>Inputs</h2>
+                                <h3>Mouse</h3>
+                                <ul>
+                                    <li><strong>Click:</strong> Detalhes sobre o feedback visual e sonoro de um clique
+                                        simples.</li>
+                                    <li><strong>Click e Arraste:</strong> Como a interface responde ao arrastar de
+                                        objetos, como documentos.</li>
+                                </ul>
+                                <div class="pagination-nav"></div>
                             </div>
                         </div>
                     </div>
-            </div>
-            <div id="page-animacao" class="page">
-                        <header class="page-header bg-secondary-green">
-                            <div class="page-header-inner">
-                                <h1 class="text-light">Animação</h1>
-                                <p class="subtitle text-light">Princípios de movimento para UI, personagens e efeitos.</p>
-                            </div>
-                        </header>
-                    <div class="page-content">
-                        <div class="page-body-container">
-                            <div class="sub-page-wrapper">
-                                <div class="sub-page">
-                                    <h2>Animação Frame a Frame</h2>
-                                    <h3>Quando é usado</h3>
-                                    <p></p>
-                                    <h3>O que não fazer</h3>
-                                    <p></p>
-                                    <div class="pagination-nav"></div>
-                                </div>
-                                <div class="sub-page">
-                                    <h2>Animação Motion</h2>
-                                    <h3>Estilo (Bounce-in/out)</h3>
-                                    <p>Uso de curvas de animação como "bounce" para dar uma sensação divertida e elástica às interações de UI.</p>
-                                    <h3>Duração</h3>
-                                    <p></p>
-                                    <h3>O que não fazer</h3>
-                                    <p></p>
-                                    <div class="pagination-nav"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <a href="https://neurobyte-games.itch.io/a-toca-do-lobo" target="_blank" rel="noopener noreferrer">jogue A Toca do Lobo</a>
+            <a href="https://neurobyte-games.itch.io/a-toca-do-lobo" target="_blank" rel="noopener noreferrer">jogue A
+                Toca do Lobo</a>
             <a href="https://linktr.ee/putsgabs" target="_blank" rel="noopener noreferrer">Feito por Gabs</a>
         </div>
     </footer>
@@ -497,4 +788,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

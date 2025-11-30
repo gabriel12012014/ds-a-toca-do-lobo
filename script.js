@@ -213,12 +213,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- LIGHTBOX PARA IMAGENS DAS SEÇÕES ---
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox-overlay';
+    const lightboxImg = document.createElement('img');
+    lightbox.appendChild(lightboxImg);
+    document.body.appendChild(lightbox);
+
+    const closeLightbox = () => lightbox.classList.remove('is-visible');
+    lightbox.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    function attachLightbox() {
+        const contentImages = document.querySelectorAll('.page-content img');
+        contentImages.forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || '';
+                lightbox.classList.add('is-visible');
+            });
+        });
+    }
+
     // --- INICIALIZAÇÃO E EVENT LISTENERS ---
     populateDynamicContent();
+    attachLightbox();
 
     document.body.addEventListener('click', (event) => {
         const target = event.target.closest('a');
-        if (target && (target.matches('.nav-link') || target.matches('.home-nav-btn') || target.matches('.sub-nav-link') || target.matches('.pagination-link'))) {
+        if (target && (target.matches('.nav-link') || target.matches('.home-nav-btn') || target.matches('.sub-nav-link') || target.matches('.pagination-link') || target.matches('.top-logo-link'))) {
             handleNavClick(event, target);
         }
     });
