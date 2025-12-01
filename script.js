@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.getElementById('overlay');
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
     const bodyEl = document.body; 
 
     // --- NAVEGAÇÃO DE PÁGINAS ---
@@ -122,15 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.remove('is-open');
         overlay.classList.remove('is-visible');
     };
-
-    // --- BOTÃO "VOLTAR AO TOPO" ---
-    window.scrollToTop = () => { mainContentEl.scrollTo({ top: 0, behavior: 'smooth' }); };
-
-    // --- LÓGICA DE SCROLL (STICKY SIDEBAR) ---
-    mainContentEl.addEventListener('scroll', () => {
-        // Botão de voltar ao topo
-        scrollTopBtn.style.display = mainContentEl.scrollTop > 100 ? "block" : "none";
-    });
 
     // --- GERAÇÃO DINÂMICA DE CONTEÚDO ---
     function slugify(text) {
